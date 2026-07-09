@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERA Vault | Privacy-First Verification</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="logo">
+        <i data-lucide="shield-check"></i>
+        <span>VERA Vault</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">What is VERA?</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#data-flow">Data Privacy</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero container">
+    <h1 class="animate-on-scroll">Verified reviews.<br><span class="gradient-text">Zero personal data.</span></h1>
+    <p class="hero-subtitle animate-on-scroll">
+      VERA Vault is a browser extension that securely stores your digital receipts. 
+      Prove you bought a product without ever revealing your identity to the merchant.
+    </p>
+    <div class="cta-group animate-on-scroll">
+      <a href="assets/vera-vault-extension.zip" class="btn btn-primary" download>
+        <i data-lucide="download"></i> Install VERA Vault
+      </a>
+      <a href="#how-it-works" class="btn btn-outline">
+        Explore the Technology
+      </a>
+    </div>
+  </header>
+
+  <!-- What is VERA & Why it Exists -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>The VERA Mission</h2>
+        <p>E-commerce is broken. To prove you are a legitimate buyer, you have to surrender your privacy.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Traditional System -->
+        <div class="comp-card comp-before animate-on-scroll">
+          <h3>The Problem: Traditional Verification</h3>
+          <p>Today, getting a "Verified Buyer" badge requires you to log into an account. This links your public review directly to your private email, real name, and purchase history. Your data is harvested, profiled, and often sold.</p>
+          <ul class="comp-list">
+            <li><i data-lucide="x-circle"></i> Requires an account login</li>
+            <li><i data-lucide="x-circle"></i> Exposes your real identity</li>
+            <li><i data-lucide="x-circle"></i> Links your reviews to your purchase history</li>
+            <li><i data-lucide="x-circle"></i> Merchant stores all your data centrally</li>
+          </ul>
+        </div>
+
+        <!-- VERA System -->
+        <div class="comp-card comp-after animate-on-scroll">
+          <h3>The Solution: Cryptographic Privacy</h3>
+          <p>VERA Vault decouples verification from identity. Using advanced cryptography, VERA mathematically proves you own a valid receipt for a product, completely anonymously. You get the badge; they get zero personal data.</p>
+          <ul class="comp-list">
+            <li><i data-lucide="check-circle-2"></i> No account login required for reviews</li>
+            <li><i data-lucide="check-circle-2"></i> Your real identity remains hidden</li>
+            <li><i data-lucide="check-circle-2"></i> Reviews cannot be linked back to you</li>
+            <li><i data-lucide="check-circle-2"></i> Data stays in your local browser Vault</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>How VERA Works</h2>
+        <p>A step-by-step journey from checkout to a verified, anonymous review. Click the steps to see what happens under the hood.</p>
+      </div>
+
+      <div class="timeline-grid animate-on-scroll">
+        <!-- Navigation Timeline -->
+        <div class="timeline-nav" id="timelineNav">
+          <div class="timeline-step active" data-target="step-1">
+            <div class="step-dot">1</div>
+            <div class="step-title">Purchase & Issuance</div>
+          </div>
+          <div class="timeline-step" data-target="step-2">
+            <div class="step-dot">2</div>
+            <div class="step-title">Stored in Vault</div>
+          </div>
+          <div class="timeline-step" data-target="step-3">
+            <div class="step-dot">3</div>
+            <div class="step-title">Writing a Review</div>
+          </div>
+          <div class="timeline-step" data-target="step-4">
+            <div class="step-dot">4</div>
+            <div class="step-title">Proof Generation</div>
+          </div>
+          <div class="timeline-step" data-target="step-5">
+            <div class="step-dot">5</div>
+            <div class="step-title">Verification & Publish</div>
+          </div>
+        </div>
+
+        <!-- Visualizer Panel -->
+        <div class="timeline-visualizer">
+          <!-- Step 1 Content -->
+          <div class="vis-content active" id="content-step-1">
+            <div class="vis-icon-wrapper"><i data-lucide="shopping-bag"></i></div>
+            <h3>1. You buy a product</h3>
+            <p>During checkout, the merchant creates a <strong>Verifiable Credential</strong>. Think of this as a highly secure, digitally signed receipt. It contains the Product ID and a cryptographic signature proving the merchant issued it.</p>
+            <p class="mono mt-4">Merchant Signature: VALID</p>
+          </div>
+
+          <!-- Step 2 Content -->
+          <div class="vis-content" id="content-step-2">
+            <div class="vis-icon-wrapper"><i data-lucide="hard-drive"></i></div>
+            <h3>2. Secure Local Storage</h3>
+            <p>The merchant sends this credential directly to your VERA Vault browser extension. It is stored <strong>locally on your hard drive</strong>. It is never uploaded to a central VERA server or cloud database.</p>
+            <p class="mono mt-4">Location: LocalStorage / Chrome Extension</p>
+          </div>
+
+          <!-- Step 3 Content -->
+          <div class="vis-content" id="content-step-3">
+            <div class="vis-icon-wrapper"><i data-lucide="message-square"></i></div>
+            <h3>3. Time to Review</h3>
+            <p>Weeks later, you decide to leave a review. On the merchant's website, you type your review and click the "Verify Anonymously with VERA" button. The website asks your Vault: <em>"Can you prove this user bought this item?"</em></p>
+          </div>
+
+          <!-- Step 4 Content -->
+          <div class="vis-content" id="content-step-4">
+            <div class="vis-icon-wrapper"><i data-lucide="cpu"></i></div>
+            <h3>4. Zero-Knowledge Proof (The Magic)</h3>
+            <p>Your Vault looks at the receipt and generates a <strong>Zero-Knowledge Proof (ZKP)</strong>. This is a complex mathematical puzzle. It proves the receipt is authentic and matches the product, but it mathematically strips away your identity and order number.</p>
+            <p class="mono mt-4">Generating ZK-Proof... Done.</p>
+          </div>
+
+          <!-- Step 5 Content -->
+          <div class="vis-content" id="content-step-5">
+            <div class="vis-icon-wrapper"><i data-lucide="badge-check"></i></div>
+            <h3>5. Verified & Anonymous</h3>
+            <p>Only the Proof and your review text are sent to the merchant. The merchant verifies the math. The math checks out. Your review is published with a "Verified Buyer" badge, but your identity remains completely unknown.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Flow Visualizer -->
+  <section class="section" id="data-flow">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Where Does Your Data Go?</h2>
+        <p>Hover over the data points below to trace exactly where your information lives. Transparency is our highest priority.</p>
+      </div>
+
+      <div class="data-flow-container animate-on-scroll">
+        <div class="data-pills" id="dataPills">
+          <div class="data-pill" data-zone="local"><i data-lucide="user"></i> Real Name & Email</div>
+          <div class="data-pill" data-zone="local"><i data-lucide="credit-card"></i> Payment Details</div>
+          <div class="data-pill" data-zone="local"><i data-lucide="receipt"></i> Raw Digital Receipt</div>
+          <div class="data-pill" data-zone="proof"><i data-lucide="lock"></i> Cryptographic Proof</div>
+          <div class="data-pill" data-zone="web"><i data-lucide="message-circle"></i> Review Text</div>
+          <div class="data-pill" data-zone="web"><i data-lucide="star"></i> Star Rating</div>
+        </div>
+
+        <div class="data-zones">
+          <div class="data-zone zone-local" id="zone-local">
+            <div class="zone-header">
+              <i data-lucide="shield"></i>
+              <h3>1. Stays in VERA Vault</h3>
+            </div>
+            <p>This data never leaves your device during the review process. The merchant cannot access your Vault.</p>
+          </div>
+
+          <div class="data-zone zone-proof" id="zone-proof">
+            <div class="zone-header">
+              <i data-lucide="cpu"></i>
+              <h3>2. The Transformation</h3>
+            </div>
+            <p>The raw receipt is mathematically destroyed and rebuilt into a Zero-Knowledge Proof. It is impossible to reverse-engineer this proof back into your receipt.</p>
+          </div>
+
+          <div class="data-zone zone-web" id="zone-web">
+            <div class="zone-header">
+              <i data-lucide="globe"></i>
+              <h3>3. Sent to Website</h3>
+            </div>
+            <p>This is the only information the merchant receives. They verify the math of the proof, and publish your review.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Overview & FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Technical FAQ & Privacy Commitments</h2>
+        <p>Simple answers to complex cryptographic questions.</p>
+      </div>
+
+      <div class="faq-container animate-on-scroll">
+        <div class="faq-item">
+          <button class="faq-question">
+            Why is it called a "Vault" instead of a Wallet?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>When people hear "Wallet", they think of cryptocurrency, Bitcoin, or Apple Pay. VERA does not store money. It is a secure, isolated container (a Vault) that stores <em>identity credentials</em> and digital receipts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is a BBS+ Signature? (Learn More)
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>BBS+ is an advanced cryptographic signature scheme. Unlike standard signatures (like RSA), BBS+ allows for <strong>Selective Disclosure</strong>. This means if a merchant signs a receipt with 10 pieces of information (Name, Order ID, Price, Product ID), you can prove the signature is valid while choosing to <em>only</em> reveal the Product ID, keeping the other 9 pieces completely hidden.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Why can't the merchant just reverse-engineer the proof?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>We use <strong>Zero-Knowledge Proofs (ZKPs)</strong> based on Bilinear Pairings. Without getting too deep into the math, generating a proof is like mixing paint colors. It's easy to mix blue and yellow to get green, but if you hand someone a bucket of green paint, it is mathematically impossible for them to un-mix it back into the original colors. The proof verifies the math without exposing the original ingredients.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What are your Privacy Commitments?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
+                <li>We do not operate central servers that track your activity.</li>
+                <li>Your credentials never leave your browser extension.</li>
+                <li>We do not collect telemetry or analytics on your purchases.</li>
+                <li>The VERA codebase is entirely open-source and auditable.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">
+          <i data-lucide="shield-check"></i>
+          <span>VERA Vault</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Github</a>
+          <a href="#">Capstone Documentation</a>
+          <a href="/demo.html">View Demo Storefront</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
