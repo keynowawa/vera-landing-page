@@ -14,15 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+    const visibleEntries = entries.filter(e => e.isIntersecting);
+    
+    visibleEntries.forEach((entry, index) => {
+      // Stagger the animations for elements entering at the same time
+      setTimeout(() => {
         entry.target.classList.add('is-visible');
+        
         // If it's the timeline, trigger the first step animation automatically
         if (entry.target.classList.contains('timeline-grid')) {
           activateTimelineStep('step-1');
         }
-        observer.unobserve(entry.target);
-      }
+      }, index * 150);
+      
+      observer.unobserve(entry.target);
     });
   }, observerOptions);
 
@@ -133,5 +138,34 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- Mobile Menu Toggle ---
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener('click', () => {
+      const isActive = navLinks.classList.contains('is-active');
+      
+      if (isActive) {
+        navLinks.classList.remove('is-active');
+        mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+      } else {
+        navLinks.classList.add('is-active');
+        mobileBtn.innerHTML = '<i data-lucide="x"></i>';
+      }
+      lucide.createIcons();
+    });
+
+    // Close menu when a link is clicked
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('is-active');
+        mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+    });
+  }
 
 });

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VERA Vault | Privacy-First Verification</title>
+  <link rel="icon" type="image/png" href="assets/vera-icon-logo.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -13,7 +14,7 @@
   <nav class="nav">
     <div class="nav-container">
       <div class="logo">
-        <i data-lucide="shield-check"></i>
+        <img src="assets/vera-icon-logo.png" alt="VERA" style="height: 28px; width: 28px; border-radius: 6px;">
         <span>VERA Vault</span>
       </div>
       <div class="nav-links">
@@ -22,23 +23,35 @@
         <a href="#data-flow">Data Privacy</a>
         <a href="#faq">FAQ</a>
       </div>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero container">
-    <h1 class="animate-on-scroll">Verified reviews.<br><span class="gradient-text">Zero personal data.</span></h1>
-    <p class="hero-subtitle animate-on-scroll">
-      VERA Vault is a browser extension that securely stores your digital receipts. 
-      Prove you bought a product without ever revealing your identity to the merchant.
-    </p>
-    <div class="cta-group animate-on-scroll">
-      <a href="assets/vera-vault-extension.zip" class="btn btn-primary" download>
-        <i data-lucide="download"></i> Install VERA Vault
-      </a>
-      <a href="#how-it-works" class="btn btn-outline">
-        Explore the Technology
-      </a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1 class="animate-on-scroll">Verified reviews.<br><span class="gradient-text">Zero personal data.</span></h1>
+        <p class="hero-subtitle animate-on-scroll">
+          VERA Vault is a browser extension that securely stores your digital receipts. 
+          Prove you bought a product without ever revealing your identity to the merchant.
+        </p>
+        <div class="cta-group animate-on-scroll">
+          <a href="assets/vera-vault-extension.zip" class="btn btn-primary" download>
+            <i data-lucide="download"></i> Install VERA Vault
+          </a>
+          <a href="#how-it-works" class="btn btn-outline">
+            Explore the Technology
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual animate-on-scroll">
+        <div class="hero-banner-card">
+          <img src="assets/vera-logo-banner.png" alt="VERA Banner">
+        </div>
+      </div>
     </div>
   </header>
 
@@ -66,7 +79,7 @@
         <!-- VERA System -->
         <div class="comp-card comp-after animate-on-scroll">
           <h3>The Solution: Cryptographic Privacy</h3>
-          <p>VERA Vault decouples verification from identity. Using advanced cryptography, VERA mathematically proves you own a valid receipt for a product, completely anonymously. You get the badge; they get zero personal data.</p>
+          <p>VERA Vault decouples verification from identity. Using advanced privacy math, VERA mathematically proves you own a valid receipt for a product, completely anonymously. You get the badge; they get zero personal data.</p>
           <ul class="comp-list">
             <li><i data-lucide="check-circle-2"></i> No account login required for reviews</li>
             <li><i data-lucide="check-circle-2"></i> Your real identity remains hidden</li>
@@ -117,7 +130,7 @@
           <div class="vis-content active" id="content-step-1">
             <div class="vis-icon-wrapper"><i data-lucide="shopping-bag"></i></div>
             <h3>1. You buy a product</h3>
-            <p>During checkout, the merchant creates a <strong>Verifiable Credential</strong>. Think of this as a highly secure, digitally signed receipt. It contains the Product ID and a cryptographic signature proving the merchant issued it.</p>
+            <p>During checkout, the merchant creates a <strong>Secure Digital Receipt</strong>. Think of this as a highly secure, digitally signed pass. It contains the Product ID and a signature proving the merchant issued it.</p>
             <p class="mono mt-4">Merchant Signature: VALID</p>
           </div>
 
@@ -125,7 +138,7 @@
           <div class="vis-content" id="content-step-2">
             <div class="vis-icon-wrapper"><i data-lucide="hard-drive"></i></div>
             <h3>2. Secure Local Storage</h3>
-            <p>The merchant sends this credential directly to your VERA Vault browser extension. It is stored <strong>locally on your hard drive</strong>. It is never uploaded to a central VERA server or cloud database.</p>
+            <p>The merchant sends this receipt directly to your VERA Vault browser extension. It is stored <strong>locally on your computer</strong>. It is never uploaded to a central VERA server or cloud database.</p>
             <p class="mono mt-4">Location: LocalStorage / Chrome Extension</p>
           </div>
 
@@ -139,16 +152,16 @@
           <!-- Step 4 Content -->
           <div class="vis-content" id="content-step-4">
             <div class="vis-icon-wrapper"><i data-lucide="cpu"></i></div>
-            <h3>4. Zero-Knowledge Proof (The Magic)</h3>
-            <p>Your Vault looks at the receipt and generates a <strong>Zero-Knowledge Proof (ZKP)</strong>. This is a complex mathematical puzzle. It proves the receipt is authentic and matches the product, but it mathematically strips away your identity and order number.</p>
-            <p class="mono mt-4">Generating ZK-Proof... Done.</p>
+            <h3>4. Privacy-Preserving Proofs (The Magic)</h3>
+            <p>Your Vault looks at the receipt and acts like a digital bouncer. It generates an <strong>Anonymous Verification Pass</strong>. This proves the receipt is authentic and matches the product, but it mathematically strips away your identity, email, and order number.</p>
+            <p class="mono mt-4">Generating Verification Pass... Done.</p>
           </div>
 
           <!-- Step 5 Content -->
           <div class="vis-content" id="content-step-5">
             <div class="vis-icon-wrapper"><i data-lucide="badge-check"></i></div>
             <h3>5. Verified & Anonymous</h3>
-            <p>Only the Proof and your review text are sent to the merchant. The merchant verifies the math. The math checks out. Your review is published with a "Verified Buyer" badge, but your identity remains completely unknown.</p>
+            <p>Only the anonymous pass and your review text are sent to the merchant. The merchant verifies the pass. Your review is published with a "Verified Buyer" badge, but your identity remains completely unknown.</p>
           </div>
         </div>
       </div>
@@ -187,7 +200,7 @@
               <i data-lucide="cpu"></i>
               <h3>2. The Transformation</h3>
             </div>
-            <p>The raw receipt is mathematically destroyed and rebuilt into a Zero-Knowledge Proof. It is impossible to reverse-engineer this proof back into your receipt.</p>
+            <p>The raw receipt is mathematically locked and rebuilt into an anonymous verification pass. It is impossible to reverse-engineer this pass back into your receipt or identity.</p>
           </div>
 
           <div class="data-zone zone-web" id="zone-web">
@@ -230,7 +243,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>BBS+ is an advanced cryptographic signature scheme. Unlike standard signatures (like RSA), BBS+ allows for <strong>Selective Disclosure</strong>. This means if a merchant signs a receipt with 10 pieces of information (Name, Order ID, Price, Product ID), you can prove the signature is valid while choosing to <em>only</em> reveal the Product ID, keeping the other 9 pieces completely hidden.</p>
+              <p>We use an advanced signature scheme that allows for <strong>Selective Disclosure</strong>. This means if a merchant signs a receipt with 10 pieces of information (Name, Order ID, Price, Product ID), you can prove the signature is valid while choosing to <em>only</em> reveal the Product ID, keeping the other 9 pieces completely hidden.</p>
             </div>
           </div>
         </div>
@@ -242,7 +255,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>We use <strong>Zero-Knowledge Proofs (ZKPs)</strong> based on Bilinear Pairings. Without getting too deep into the math, generating a proof is like mixing paint colors. It's easy to mix blue and yellow to get green, but if you hand someone a bucket of green paint, it is mathematically impossible for them to un-mix it back into the original colors. The proof verifies the math without exposing the original ingredients.</p>
+              <p>We use <strong>Privacy-Preserving Proofs</strong>. Generating a proof is like mixing paint colors. It's easy to mix blue and yellow to get green, but if you hand someone a bucket of green paint, it is mathematically impossible for them to un-mix it back into the original colors. The proof verifies the math without exposing the original ingredients.</p>
             </div>
           </div>
         </div>
@@ -267,18 +280,53 @@
     </div>
   </section>
 
+  <!-- Meet the Team Section -->
+  <section class="section" id="team" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Meet the Team</h2>
+        <p>The developers and designers behind the VERA project.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card animate-on-scroll">
+          <div class="team-avatar"><i data-lucide="user"></i></div>
+          <h3 class="team-name">Jel Kyann Tagle</h3>
+          <p class="team-role">Product Manager &<br>Full-Stack Developer</p>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-avatar"><i data-lucide="user"></i></div>
+          <h3 class="team-name">Nico Mercado</h3>
+          <p class="team-role">Backend Developer &<br>QA Engineer</p>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-avatar"><i data-lucide="user"></i></div>
+          <h3 class="team-name">Mary Angelique Sta. Ana</h3>
+          <p class="team-role">Frontend Developer &<br>UI/UX Designer</p>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <div class="team-avatar"><i data-lucide="user"></i></div>
+          <h3 class="team-name">Kim Anthony Monteagudo</h3>
+          <p class="team-role">Full-Stack Developer &<br>Tech Docs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="logo">
-          <i data-lucide="shield-check"></i>
-          <span>VERA Vault</span>
-        </div>
-        <div class="footer-links">
-          <a href="#">Github</a>
-          <a href="#">Capstone Documentation</a>
-          <a href="/demo.html">View Demo Storefront</a>
+      <div class="footer-content" style="flex-direction: column; align-items: flex-start; gap: 32px;">
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 24px;">
+          <div class="logo">
+            <img src="assets/vera-icon-logo.png" alt="VERA" style="height: 28px; width: 28px; border-radius: 6px;">
+            <span>VERA Vault</span>
+            <span class="mono" style="margin-left: 12px; font-size: 0.8em;">v1.5.1</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Github</a>
+            <a href="#">Capstone Documentation</a>
+            <a href="/demo.html">View Demo Storefront</a>
+          </div>
         </div>
       </div>
     </div>
