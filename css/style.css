@@ -126,9 +126,10 @@ p {
 }
 
 .team-card {
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
   background: transparent;
   border: none;
@@ -138,11 +139,12 @@ p {
 
 .team-avatar-wrapper {
   position: relative;
-  width: 100%;
+  width: 160px;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-md);
+  border-radius: 50%;
   overflow: hidden;
   background: var(--bg-tertiary);
+  margin: 0 auto;
 }
 
 .team-avatar-wrapper img {
@@ -150,17 +152,18 @@ p {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s var(--ease-out), filter 0.3s ease;
-  filter: grayscale(80%) contrast(1.1);
+  filter: grayscale(0%) contrast(1);
 }
 
 .team-card:hover .team-avatar-wrapper img {
-  transform: scale(1.03);
-  filter: grayscale(0%) contrast(1);
+  transform: scale(1.05);
+  filter: grayscale(100%) contrast(1.1);
 }
 
 .team-social-overlay {
   position: absolute;
   inset: 0;
+  border-radius: 50%;
   background: rgba(9, 9, 11, 0.5);
   display: flex;
   align-items: center;
@@ -388,44 +391,137 @@ p {
   position: relative;
 }
 
-.minimal-glass-card {
+.hero-interactive {
   position: relative;
-  width: 240px;
-  height: 240px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.ext-card {
+  background: rgba(15, 15, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  transform: rotateY(-5deg) rotateX(5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
   animation: float 6s ease-in-out infinite;
 }
 
-.minimal-icon {
-  color: var(--text-primary);
-  opacity: 0.9;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.2));
-  z-index: 2;
+.ext-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-10px);
+  box-shadow: 0 30px 60px rgba(129, 140, 248, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
-.minimal-pulse {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: var(--accent-primary);
+.ext-header {
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.ext-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ext-body {
+  padding: 24px;
+  position: relative;
+}
+
+.review-mock {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.r-avatar {
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  filter: blur(50px);
-  opacity: 0.3;
-  z-index: 1;
-  animation: minimalPulse 4s ease-in-out infinite alternate;
+  background: var(--bg-tertiary);
 }
 
-@keyframes minimalPulse {
-  0% { transform: scale(0.8); opacity: 0.2; }
-  100% { transform: scale(1.2); opacity: 0.4; }
+.r-stars {
+  color: #FBBF24;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.r-line {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.r-line.short {
+  width: 60%;
+}
+
+.scanner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary), 0 0 20px var(--accent-primary);
+  animation: scan 3s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes scan {
+  0% { top: 10%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 90%; opacity: 0; }
+}
+
+.verified-stamp {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10B981;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  animation: stampFade 3s infinite;
+  white-space: nowrap;
+}
+
+@keyframes stampFade {
+  0%, 60% { opacity: 0; transform: translate(-50%, 10px) scale(0.9); }
+  70%, 90% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, 0) scale(1); }
 }
 
 @keyframes float {
