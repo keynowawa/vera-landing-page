@@ -150,9 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isActive) {
         navLinks.classList.remove('is-active');
         mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+        document.body.style.overflow = '';
       } else {
         navLinks.classList.add('is-active');
         mobileBtn.innerHTML = '<i data-lucide="x"></i>';
+        document.body.style.overflow = 'hidden';
       }
       lucide.createIcons();
     });
@@ -160,10 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu when a link is clicked
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
         navLinks.classList.remove('is-active');
         mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+        document.body.style.overflow = '';
         lucide.createIcons();
+
+        // Smooth scroll to target
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
       });
     });
   }
