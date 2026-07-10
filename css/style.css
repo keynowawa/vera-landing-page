@@ -1134,13 +1134,15 @@ p {
     bottom: 0;
     background: var(--bg-primary);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 48px;
     gap: 32px;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    overflow-y: auto;
   }
   
   .nav-links.is-active {
