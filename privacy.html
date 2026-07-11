@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | VERA Vault</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .legal-content {
+      max-width: 800px;
+      margin: 120px auto 80px;
+      padding: 0 24px;
+    }
+    .legal-content h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+      text-align: center;
+    }
+    .legal-content h4 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .legal-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .legal-content strong {
+      color: var(--accent-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/vera-logo-banner.png" alt="VERA Vault" style="height: 32px; width: auto; border-radius: 4px;">
+      </a>
+      <div class="nav-menu" id="nav-menu">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="legal-content">
+    <h1>Privacy Policy</h1>
+    
+    <h4>Your Data Stays Yours</h4>
+    <p>VERA Vault is designed from the ground up to prevent data collection. We believe privacy is a fundamental right.</p>
+    
+    <h4>What We Collect</h4>
+    <p><strong>Nothing.</strong> We do not collect analytics, telemetry, usage data, or any personal information. The extension does not make network requests to any VERA-operated server.</p>
+    
+    <h4>Local Storage Only</h4>
+    <p>Your Verifiable Credentials are stored in Chrome's local storage API. This data exists only on your device and is never synchronized, uploaded, or shared.</p>
+    
+    <h4>Zero-Knowledge Proofs</h4>
+    <p>When you verify a review, mathematical proofs are generated locally on your device and sent directly to the merchant's website. These proofs do not contain your name, email, IP address, or any information that could identify you.</p>
+    
+    <h4>What Merchants Receive</h4>
+    <p>Merchants receive only: (1) the cryptographic proof that you purchased the product, and (2) your review text and rating. They cannot determine your identity from this information.</p>
+    
+    <h4>Data Deletion</h4>
+    <p>You can delete any credential or reset the entire Vault at any time. Uninstalling the extension also removes all stored data.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" style="text-decoration: none; display: block; margin-bottom: 12px;">
+            <img src="assets/vera-logo-banner.png" alt="VERA Vault" style="height: 32px; width: auto; border-radius: 4px;">
+          </a>
+          <p class="footer-tagline">Privacy-preserving review verification powered by Zero-Knowledge Proofs and BBS+ Signatures.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">What is VERA?</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#data-flow">Data Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="assets/vera-user-manual.pdf" target="_blank">User Manual</a></li>
+            <li><a href="https://github.com/keynowawa/vera-landing-page" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="mono">v1.8.0</span>
+        <span>© 2026 MMMKAY Studios. All rights reserved.</span>
+        <span>Developed by MMMKAY Studios</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
